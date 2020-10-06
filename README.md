@@ -1,0 +1,1 @@
+# DBMS_Group_Replication_Single_Primary_Mode
