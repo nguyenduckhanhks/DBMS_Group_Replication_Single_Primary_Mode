@@ -1,0 +1,46 @@
+version: "3"
+
+services: 
+    server1:
+        image: mysql
+        ports:
+            - 33061:33061
+        command: 
+            - --default-authentication-plugin=mysql_native_password
+            - --secure-file-priv=NULL
+        volumes: 
+            - ./server1/mysql:/etc/mysql
+            - ./server1/data:/var/lib/mysql
+            - ./server1/log:/var/log/mysql
+            - ./server1/backup:/backup
+        environment: 
+            MYSQL_ROOT_PASSWORD: "root"
+    server2:
+        image: mysql
+        ports: 
+            - 33062:33062
+        command: 
+            - --default-authentication-plugin=mysql_native_password
+            - --secure-file-priv=NULL
+        volumes: 
+            - ./server2/mysql:/etc/mysql
+            - ./server2/data:/var/lib/mysql
+            - ./server2/log:/var/log/mysql
+            - ./server2/backup:/backup
+        environment: 
+            MYSQL_ROOT_PASSWORD: "root"
+    server3:
+        image: mysql
+        ports: 
+            - 33063:33063
+        command: 
+            - --default-authentication-plugin=mysql_native_password
+            - --secure-file-priv=NULL
+        volumes: 
+            - ./server3/mysql:/etc/mysql
+            - ./server3/data:/var/lib/mysql
+            - ./server3/log:/var/log/mysql
+            - ./server3/backup:/backup
+        environment: 
+            MYSQL_ROOT_PASSWORD: "root"
+    
